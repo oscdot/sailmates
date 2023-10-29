@@ -9,4 +9,5 @@ A social platform for people that like sailing
 - Shadcn/ui for that sleek ui and awesome components from Radix UI
 - Convex handling the data
 - Clerk handles the auth & user mgmt
+
 # sailmates
