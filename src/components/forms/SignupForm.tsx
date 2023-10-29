@@ -46,12 +46,12 @@ const SignupForm = () => {
         passwordConfirm: values.passwordConfirm,
       });
       //pb.collection('users').authWithPassword(values.email, values.password);
+      router.push('/dashboard');
       toast.success(`Welcome, ${createdUser.username}!`, {
         duration: 1200,
       });
-      router.push('/dashboard');
     } catch (error: any) {
-      toast.error(error.message + ' Please check ur details.');
+      toast.error(error.data.message);
     }
   }
 

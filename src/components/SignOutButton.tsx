@@ -12,7 +12,7 @@ const SignOutButton = () => {
       variant="outline"
       onClick={() => {
         pb.authStore.clear();
-        router.push('/');
+        router.push('/login');
       }}
     >
       Sign out

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 
 import { Inter as FontSans } from 'next/font/google';
@@ -9,7 +8,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { QueryClient } from '@tanstack/react-query';
 import Providers from './utils/Providers';
 import { Toaster } from 'sonner';
-import { pb } from '@/lib/pb';
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -17,18 +15,24 @@ export const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: 'The best amateur porn sharing site. NSFW videos, pics, and more.',
+  title: 'Where sailing communities meet',
   description:
-    'The best way to share ur amateur porn. Share it safely, get paid.',
+    'The best way to share, and connect with sailing communities around the world',
   keywords: [
-    'nudes',
-    'kinks',
-    'nude',
-    'xxx',
-    'adult',
-    'adult website',
-    'amateur porn',
-    'nsfw',
+    'sailmates',
+    'sailing',
+    'sailing community',
+    'sejlklub',
+    'sejlklubber',
+    'optimistjolle',
+    'sejlads',
+    'både',
+    'båd',
+    'sejlbåd',
+    'sælg båd',
+    'køb båd',
+    'både til salg',
+    'køb sejlbåd',
   ],
 };
 

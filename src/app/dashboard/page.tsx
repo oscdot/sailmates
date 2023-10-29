@@ -4,7 +4,7 @@ import { pb } from '@/lib/pb';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions - NudeSafe',
+  title: 'Dashboard',
 };
 
 export default function DashboardPage() {
