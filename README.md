@@ -7,7 +7,6 @@ A social platform for people that like sailing
 ## Stack
 
 - Shadcn/ui for that sleek ui and awesome components from Radix UI
-- Convex handling the data
-- Clerk handles the auth & user mgmt
-
-# sailmates
+- PocketBase hosted on an Linode Instance running Debian
+- React Query for fetching/caching
+- Jotai for state management

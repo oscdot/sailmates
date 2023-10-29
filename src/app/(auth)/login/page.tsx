@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import LoginForm from '@/components/forms/LoginForm';
-import { pb } from '@/lib/pb';
-import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Login - Sailmates',

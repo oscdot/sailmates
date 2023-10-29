@@ -25,13 +25,6 @@ import { useRouter } from 'next/navigation';
 const LoginForm = () => {
   const router = useRouter();
 
-  useEffect(() => {
-    const { isAuthRecord, model } = pb.authStore;
-    if (isAuthRecord) {
-      router.replace('/dashboard');
-    }
-  }, [pb.authStore]);
-
   // 1. Define your form.
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
