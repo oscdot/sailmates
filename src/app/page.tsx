@@ -1,23 +1,12 @@
-import LatestUsersAvatarList from '@/components/users/LatestUsersAvatarList';
-import { pb } from '@/lib/pb';
-
-const getUsers = async () => {
-  try {
-    const result = await pb.collection('users').getFullList({ batch: 1 });
-
-    return result;
-  } catch (error) {
-    console.error(error);
-  }
-};
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 
 export default async function Home() {
-  const users = await getUsers();
   return (
-    <>
-      <div className="flex items-center justify-center space-x-1">
-        <LatestUsersAvatarList />
-      </div>
-    </>
+    <div className="flex min-h-screen flex-col px-14 pt-10">
+      <h1 className="mb-4 text-6xl font-semibold text-gray-800">Home</h1>
+      <p className="mb-8 text-xl text-gray-600">
+        This is the Home page. It&apos;s a work in progress.
+      </p>
+    </div>
   );
 }

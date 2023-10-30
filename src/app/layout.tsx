@@ -2,13 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 import { Inter as FontSans } from 'next/font/google';
-import { cn } from '@/lib/utils';
-import MainNav from '@/components/main-nav';
-import { ThemeProvider } from '@/components/theme-provider';
-import { QueryClient } from '@tanstack/react-query';
-import Providers from './utils/Providers';
 import { Toaster } from 'sonner';
-
+import { Providers } from './providers';
+import NavigationBar from '@/components/NavigationBar';
 export const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
@@ -36,8 +32,6 @@ export const metadata: Metadata = {
   ],
 };
 
-const queryClient = new QueryClient();
-
 export default function RootLayout({
   children,
 }: {
@@ -45,26 +39,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          fontSans.variable
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Providers>
-            <MainNav />
-            <main className="flex w-full flex-1 flex-col overflow-hidden">
-              {children}
-            </main>
-            <Toaster position="top-center" />
-          </Providers>
-        </ThemeProvider>
+      <body>
+        <Providers>
+          <NavigationBar />
+          <main className="mx-20 flex min-h-screen justify-center">
+            <div className="lg:w-full xl:w-2/3">{children}</div>
+          </main>
+          <Toaster position="top-center" />
+        </Providers>
       </body>
     </html>
   );
