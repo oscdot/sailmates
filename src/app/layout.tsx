@@ -3,8 +3,9 @@ import './globals.css';
 
 import { Inter as FontSans } from 'next/font/google';
 import { Toaster } from 'sonner';
-import { Providers } from './providers';
+import Providers from './providers';
 import NavigationBar from '@/components/NavigationBar';
+import { ClerkProvider } from '@clerk/nextjs';
 export const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
@@ -38,16 +39,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <Providers>
-          <NavigationBar />
-          <main className="mx-20 flex min-h-screen justify-center">
-            <div className="lg:w-full xl:w-2/3">{children}</div>
-          </main>
-          <Toaster position="top-center" />
-        </Providers>
-      </body>
-    </html>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}
+    >
+      <html lang="en" suppressHydrationWarning>
+        <body>
+          <Providers>
+            <NavigationBar />
+            <main className="mx-20 flex min-h-screen justify-center">
+              <div className="lg:w-full xl:w-2/3">{children}</div>
+            </main>
+            <Toaster position="top-center" />
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
